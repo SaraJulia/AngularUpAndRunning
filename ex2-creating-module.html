@@ -11,6 +11,7 @@
 		<br/>
 
 		<button ng-click='ctrl.changeMessage()'> Change Message </button>
+		<!-- ng-click is a directive that evaluates the expression passed to it. -->
 
 	<script 
 src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
@@ -19,6 +20,9 @@ src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
 		<script type="text/javascript">
 			angular.module('notesApp',[]).controller
 			('MainCtrl', [function() {
+				//reffering to this as 'self' is good practice. 'this' is reliant on scope, so assigning it to a variable unique to the function eliminates confusion.
+
+				// but if 'this' can change based on scope, how does assining it to a separate variable matter?
 				var self = this;
 				self.message = 'Hello ';
 				self.changeMessage = function(){
