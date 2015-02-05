@@ -5,19 +5,22 @@
 	<head>
 		<title>Hello Angular JS</title>
 	</head>
-	
-	<body ng-controller="MainCtrl">
-		Hello {{1 + 1}}nd time AngularJS
+	<!-- The below tag replaces the scope situation from before -->
+	<body ng-controller="MainCtrl as ctrl">
+		{{ctrl.helloMsg}} AngularJS
+		<br/>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+		<button ng-click='ctrl.changeMessage()'> Change Message </button>
+
+	<script 
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js">
+		</script>
 		<!-- I think this tag defines the module as the app above? -->
 		<script type="text/javascript">
-			angular.module('notesApp',[])
-			.controller('MainCtrl', [function(){
-				//1st agr is controller name, 2d is a dependency
-
-				//Control Things!
-				console.log('MainCtrl has been created');
+			angular.module('notesApp',[]).controller
+			('MainCtrl', [function() {
+				this.helloMsg = 'Hello ';
+				var goodbyeMsg = 'Goodbye ';
 			}]);
 		</script>
 
