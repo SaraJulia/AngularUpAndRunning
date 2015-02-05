@@ -17,6 +17,7 @@
 	<div ng-repeat="note in ctrl.notes"
 		 ng-class="ctrl.getNoteClass(note.done)">
 		<!-- ng-repeat iterates over a list or over keys of an object -->
+		<!-- ng-class applies or removes CSS classes -->
 
 		<!-- no difference between these two types of accessing variables, except double curlies takes a little longer and so sometimes it displays before the first page load. might also use directive ng-cloak -->
 		<span class="label"> {{note.label}} </span>
